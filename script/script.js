@@ -22,20 +22,26 @@ function divides (operand1, operand2) {
     return operand1 / operand2;
 }
 
-do {
-    let operator;
-    function askOperator () {
-        operator = prompt('Please enter one of operations: *, +, -, /');
-        return operator;
-    }
-    askOperator();
-    if (operator === '+') {
-        alert(`Sum is ${sums(askOperand(), askOperand())}`);
-    } else if (operator === '-') {
-        alert(`Diff is ${difference(askOperand(), askOperand())}`);
-    } else if (operator === '/') {
-        alert(`Div is ${divides(askOperand(), askOperand())}`);
-    } else if (operator === '*') {
-        alert(`Mult is ${multiplies(askOperand(), askOperand())}`);
-    }
-} while (confirm('Do you want to repeat?'));
+function main () {
+    do {
+        let operator;
+        function askOperator() {
+            operator = prompt('Please enter one of operations: *, +, -, /');
+            while(operator !== '+' && operator !== '/' && operator !== '-' && operator !== '*'  ) {
+                operator = prompt('Please enter one of operations: *, +, -, /');
+            }
+            return operator;
+        }
+        askOperator();
+        if (operator === '+') {
+            alert(`Sum is ${sums(askOperand(), askOperand())}`);
+        } else if (operator === '-') {
+            alert(`Diff is ${difference(askOperand(), askOperand())}`);
+        } else if (operator === '/') {
+            alert(`Div is ${divides(askOperand(), askOperand())}`);
+        } else if (operator === '*') {
+            alert(`Mult is ${multiplies(askOperand(), askOperand())}`);
+        }
+    } while (confirm('Do you want to repeat?'));
+}
+main();
