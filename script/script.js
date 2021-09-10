@@ -1,42 +1,42 @@
-function askOperand () {
-    let operand = +prompt('Please enter operand');
-    while (isNaN(operand)) {
-        operand = +prompt('Please enter a NUMBER!');
+function calculator () {
+    function askOperand() {
+        let operand = +prompt('Please enter operand');
+        while (isNaN(operand)) {
+            operand = +prompt('Please enter a NUMBER!');
+        }
+        return operand;
     }
-    return operand;
-}
 
-function sums (operand1, operand2) {
-    return operand1 + operand2;
-}
+    function summing(operand1, operand2) {
+        return operand1 + operand2;
+    }
 
-function difference (operand1, operand2) {
-    return operand1 - operand2;
-}
+    function subtraction(operand1, operand2) {
+        return operand1 - operand2;
+    }
 
-function multiplies (operand1, operand2) {
-    return operand1 * operand2;
-}
+    function multiplies(operand1, operand2) {
+        return operand1 * operand2;
+    }
 
-function divides (operand1, operand2) {
-    return operand1 / operand2;
-}
+    function divides(operand1, operand2) {
+        return operand1 / operand2;
+    }
 
-function main () {
     do {
         let operator;
         function askOperator() {
             operator = prompt('Please enter one of operations: *, +, -, /');
-            while(operator !== '+' && operator !== '/' && operator !== '-' && operator !== '*'  ) {
+            while (operator !== '+' && operator !== '/' && operator !== '-' && operator !== '*') {
                 operator = prompt('Please enter one of operations: *, +, -, /');
             }
-            return operator;
         }
+
         askOperator();
         if (operator === '+') {
-            alert(`Sum is ${sums(askOperand(), askOperand())}`);
+            alert(`Sum is ${summing(askOperand(), askOperand())}`);
         } else if (operator === '-') {
-            alert(`Diff is ${difference(askOperand(), askOperand())}`);
+            alert(`Diff is ${subtraction(askOperand(), askOperand())}`);
         } else if (operator === '/') {
             alert(`Div is ${divides(askOperand(), askOperand())}`);
         } else if (operator === '*') {
@@ -44,4 +44,4 @@ function main () {
         }
     } while (confirm('Do you want to repeat?'));
 }
-main();
+calculator();
