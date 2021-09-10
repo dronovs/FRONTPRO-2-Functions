@@ -1,4 +1,5 @@
 function calculator () {
+    let showMessage;
     function askOperand() {
         let operand = +prompt('Please enter operand');
         while (isNaN(operand)) {
@@ -34,13 +35,17 @@ function calculator () {
 
         askOperator();
         if (operator === '+') {
-            alert(`Sum is ${summing(askOperand(), askOperand())}`);
+            showMessage = `Sum is ${summing(askOperand(), askOperand())}`
+            alert(showMessage);
         } else if (operator === '-') {
-            alert(`Diff is ${subtraction(askOperand(), askOperand())}`);
+            showMessage = `Diff is ${subtraction(askOperand(), askOperand())}`
+            alert(showMessage);
         } else if (operator === '/') {
-            alert(`Div is ${divides(askOperand(), askOperand())}`);
+            showMessage = `Div is ${divides(askOperand(), askOperand())}`
+            alert(showMessage);
         } else if (operator === '*') {
-            alert(`Mult is ${multiplies(askOperand(), askOperand())}`);
+            showMessage = `Mult is ${multiplies(askOperand(), askOperand())}`
+            alert(showMessage);
         }
     } while (confirm('Do you want to repeat?'));
 }
