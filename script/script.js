@@ -1,5 +1,7 @@
 function calculator () {
     let showMessage;
+    let operator;
+
     function askOperand() {
         let operand = +prompt('Please enter operand');
         while (isNaN(operand)) {
@@ -25,7 +27,6 @@ function calculator () {
     }
 
     do {
-        let operator;
         function askOperator() {
             operator = prompt('Please enter one of operations: *, +, -, /');
             while (operator !== '+' && operator !== '/' && operator !== '-' && operator !== '*') {
